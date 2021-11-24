@@ -1,5 +1,5 @@
-15:29:58.701 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
-15:29:59.600 request:
+16:13:35.306 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+16:13:36.169 request:
 1 > POST http://localhost:8080/v1/pautas
 1 > Accept-Encoding: gzip,deflate
 1 > Connection: Keep-Alive
@@ -7,13 +7,13 @@
 1 > Content-Type: application/json; charset=UTF-8
 1 > Host: localhost:8080
 1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_211)
-{"uuid":"74b1769e-d2d1-4ce5-bb1b-4bca55a22380","titulo":"Título - 633","descricao":"descricao"}
+{"uuid":"5f1767c5-03af-4aa4-89cd-196e0825510b","titulo":"Título - 221","descricao":"descricao"}
 
-15:29:59.631 response time in milliseconds: 30,96
+16:13:36.202 response time in milliseconds: 32,62
 1 < 201
 1 < Connection: keep-alive
 1 < Content-Length: 0
-1 < Date: Wed, 24 Nov 2021 17:29:59 GMT
+1 < Date: Wed, 24 Nov 2021 18:13:36 GMT
 1 < Keep-Alive: timeout=60
 1 < Location: 
 

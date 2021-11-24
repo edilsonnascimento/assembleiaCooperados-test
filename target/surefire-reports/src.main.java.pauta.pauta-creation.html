@@ -172,18 +172,18 @@
 </div>
 <div class="step-row">
 <div class="step-cell passed">* def uuidRandom =</div>
-<div class="time-cell passed">0.003429</div>
+<div class="time-cell passed">0.003213</div>
 </div>
 <div class="preformatted">function() { return java.util.UUID.randomUUID() + ''}
-15:29:58.701 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js</div>
+16:13:35.306 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js</div>
 <div class="step-row">
 <div class="step-cell passed">* def numberRandom =</div>
-<div class="time-cell passed">0.00194</div>
+<div class="time-cell passed">0.002522</div>
 </div>
 <div class="preformatted">function(max) { return Math.floor(Math.random() * max) }</div>
 <div class="step-row">
 <div class="step-cell passed">* def pauta =</div>
-<div class="time-cell passed">0.390658</div>
+<div class="time-cell passed">0.387549</div>
 </div>
 <div class="preformatted">{
   "uuid": '#(uuidRandom())',
@@ -192,21 +192,21 @@
 }</div>
 <div class="step-row">
 <div class="step-cell passed">Given url 'http://localhost:8080'</div>
-<div class="time-cell passed">0.002261</div>
+<div class="time-cell passed">0.001664</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">And path 'v1/pautas'</div>
-<div class="time-cell passed">0.002183</div>
+<div class="time-cell passed">0.001287</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">And request pauta</div>
-<div class="time-cell passed">0.000039</div>
+<div class="time-cell passed">0.00002</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">When method POST</div>
-<div class="time-cell passed">0.517022</div>
+<div class="time-cell passed">0.488441</div>
 </div>
-<div class="preformatted">15:29:59.600 request:
+<div class="preformatted">16:13:36.169 request:
 1 &gt; POST http://localhost:8080/v1/pautas
 1 &gt; Accept-Encoding: gzip,deflate
 1 &gt; Connection: Keep-Alive
@@ -214,18 +214,18 @@
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Host: localhost:8080
 1 &gt; User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_211)
-{"uuid":"74b1769e-d2d1-4ce5-bb1b-4bca55a22380","titulo":"T&iacute;tulo - 633","descricao":"descricao"}
+{"uuid":"5f1767c5-03af-4aa4-89cd-196e0825510b","titulo":"T&iacute;tulo - 221","descricao":"descricao"}
 
-15:29:59.631 response time in milliseconds: 30,96
+16:13:36.202 response time in milliseconds: 32,62
 1 &lt; 201
 1 &lt; Connection: keep-alive
 1 &lt; Content-Length: 0
-1 &lt; Date: Wed, 24 Nov 2021 17:29:59 GMT
+1 &lt; Date: Wed, 24 Nov 2021 18:13:36 GMT
 1 &lt; Keep-Alive: timeout=60
 1 &lt; Location:</div>
 <div class="step-row">
 <div class="step-cell passed">Then status 201</div>
-<div class="time-cell passed">0.000011</div>
+<div class="time-cell passed">0.000009</div>
 </div>
 </div>
 </div>

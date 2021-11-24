@@ -1,5 +1,5 @@
-<testsuite failures="0" name="src/main/java/pauta/pauta-creation.feature" skipped="0" tests="1" time="0.917542">
-  <testcase classname="src.main.java.pauta.pauta-creation" name="Test POST creat Pauta" time="0.917542">
+<testsuite failures="0" name="src/main/java/pauta/pauta-creation.feature" skipped="0" tests="1" time="0.884706">
+  <testcase classname="src.main.java.pauta.pauta-creation" name="Test POST creat Pauta" time="0.884706">
     <system-out>* def uuidRandom = ........................................................ passed
 * def numberRandom = ...................................................... passed
 * def pauta = ............................................................. passed
