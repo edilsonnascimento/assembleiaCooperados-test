@@ -1,22 +1,27 @@
-14:56:11.513 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
-14:56:12.332 request:
+15:29:58.701 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js
+15:29:59.600 request:
 1 > POST http://localhost:8080/v1/pautas
 1 > Accept-Encoding: gzip,deflate
 1 > Connection: Keep-Alive
-1 > Content-Length: 89
+1 > Content-Length: 96
 1 > Content-Type: application/json; charset=UTF-8
 1 > Host: localhost:8080
 1 > User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_211)
-{"uuid":"1bf315dc-9f15-4da1-9ade-33388ac0b636","titulo":"titulo","descricao":"descricao"}
+{"uuid":"74b1769e-d2d1-4ce5-bb1b-4bca55a22380","titulo":"Título - 633","descricao":"descricao"}
 
-14:56:12.386 response time in milliseconds: 52,50
-1 < 500
-1 < Connection: close
-1 < Content-Type: application/json
-1 < Date: Wed, 24 Nov 2021 16:56:12 GMT
-1 < Transfer-Encoding: chunked
-{"timestamp":"2021-11-24T16:56:12.379+00:00","status":500,"error":"Internal Server Error","path":"/v1/pautas"}
+15:29:59.631 response time in milliseconds: 30,96
+1 < 201
+1 < Connection: keep-alive
+1 < Content-Length: 0
+1 < Date: Wed, 24 Nov 2021 17:29:59 GMT
+1 < Keep-Alive: timeout=60
+1 < Location: 
 
-14:56:12.387 status code was: 500, expected: 201, response time: 52, url: http://localhost:8080/v1/pautas, response: {"path":"/v1/pautas","error":"Internal Server Error","timestamp":"2021-11-24T16:56:12.379+00:00","status":500}
+eout=60
+1 < Location: 
+
+06+00:00","status":500,"error":"Internal Server Error","path":"/v1/pautas"}
+
+15:11:51.614 status code was: 500, expected: 201, response time: 51, url: http://localhost:8080/v1/pautas, response: {"path":"/v1/pautas","error":"Internal Server Error","timestamp":"2021-11-24T17:11:51.606+00:00","status":500}
 }
 }

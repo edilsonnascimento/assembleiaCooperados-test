@@ -171,54 +171,62 @@
 <span class="scenario-keyword">Scenario: [1:3]</span><span class="scenario-name">Test POST creat Pauta</span>
 </div>
 <div class="step-row">
+<div class="step-cell passed">* def uuidRandom =</div>
+<div class="time-cell passed">0.003429</div>
+</div>
+<div class="preformatted">function() { return java.util.UUID.randomUUID() + ''}
+15:29:58.701 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js</div>
+<div class="step-row">
+<div class="step-cell passed">* def numberRandom =</div>
+<div class="time-cell passed">0.00194</div>
+</div>
+<div class="preformatted">function(max) { return Math.floor(Math.random() * max) }</div>
+<div class="step-row">
 <div class="step-cell passed">* def pauta =</div>
-<div class="time-cell passed">0.03916</div>
+<div class="time-cell passed">0.390658</div>
 </div>
 <div class="preformatted">{
-  "uuid": "1bf315dc-9f15-4da1-9ade-33388ac0b636",
-  "titulo": "titulo",
+  "uuid": '#(uuidRandom())',
+  "titulo": '#("T&iacute;tulo - " + numberRandom(1000))',
   "descricao": "descricao"
-}
-14:56:11.513 skipping bootstrap configuration: could not find or read file: classpath:karate-config.js</div>
+}</div>
 <div class="step-row">
 <div class="step-cell passed">Given url 'http://localhost:8080'</div>
-<div class="time-cell passed">0.002013</div>
+<div class="time-cell passed">0.002261</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">And path 'v1/pautas'</div>
-<div class="time-cell passed">0.001916</div>
+<div class="time-cell passed">0.002183</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">And request pauta</div>
-<div class="time-cell passed">0.000027</div>
+<div class="time-cell passed">0.000039</div>
 </div>
 <div class="step-row">
 <div class="step-cell passed">When method POST</div>
-<div class="time-cell passed">0.816757</div>
+<div class="time-cell passed">0.517022</div>
 </div>
-<div class="preformatted">14:56:12.332 request:
+<div class="preformatted">15:29:59.600 request:
 1 &gt; POST http://localhost:8080/v1/pautas
 1 &gt; Accept-Encoding: gzip,deflate
 1 &gt; Connection: Keep-Alive
-1 &gt; Content-Length: 89
+1 &gt; Content-Length: 96
 1 &gt; Content-Type: application/json; charset=UTF-8
 1 &gt; Host: localhost:8080
 1 &gt; User-Agent: Apache-HttpClient/4.5.11 (Java/1.8.0_211)
-{"uuid":"1bf315dc-9f15-4da1-9ade-33388ac0b636","titulo":"titulo","descricao":"descricao"}
+{"uuid":"74b1769e-d2d1-4ce5-bb1b-4bca55a22380","titulo":"T&iacute;tulo - 633","descricao":"descricao"}
 
-14:56:12.386 response time in milliseconds: 52,50
-1 &lt; 500
-1 &lt; Connection: close
-1 &lt; Content-Type: application/json
-1 &lt; Date: Wed, 24 Nov 2021 16:56:12 GMT
-1 &lt; Transfer-Encoding: chunked
-{"timestamp":"2021-11-24T16:56:12.379+00:00","status":500,"error":"Internal Server Error","path":"/v1/pautas"}</div>
+15:29:59.631 response time in milliseconds: 30,96
+1 &lt; 201
+1 &lt; Connection: keep-alive
+1 &lt; Content-Length: 0
+1 &lt; Date: Wed, 24 Nov 2021 17:29:59 GMT
+1 &lt; Keep-Alive: timeout=60
+1 &lt; Location:</div>
 <div class="step-row">
-<div class="step-cell failed">Then status 201</div>
-<div class="time-cell failed">0.000185</div>
+<div class="step-cell passed">Then status 201</div>
+<div class="time-cell passed">0.000011</div>
 </div>
-<div class="preformatted">14:56:12.387 status code was: 500, expected: 201, response time: 52, url: http://localhost:8080/v1/pautas, response: {"path":"/v1/pautas","error":"Internal Server Error","timestamp":"2021-11-24T16:56:12.379+00:00","status":500}
-pauta-creation.feature:16 - status code was: 500, expected: 201, response time: 52, url: http://localhost:8080/v1/pautas, response: {"path":"/v1/pautas","error":"Internal Server Error","timestamp":"2021-11-24T16:56:12.379+00:00","status":500}</div>
 </div>
 </div>
 </body>

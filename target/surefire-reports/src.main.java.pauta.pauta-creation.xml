@@ -1,14 +1,12 @@
-<testsuite failures="1" name="src/main/java/pauta/pauta-creation.feature" skipped="0" tests="1" time="0.860059">
-  <testcase classname="src.main.java.pauta.pauta-creation" name="Test POST creat Pauta" time="0.860059">
-    <failure message="pauta-creation.feature:16 - status code was: 500, expected: 201, response time: 52, url: http://localhost:8080/v1/pautas, response: {&quot;path&quot;:&quot;/v1/pautas&quot;,&quot;error&quot;:&quot;Internal Server Error&quot;,&quot;timestamp&quot;:&quot;2021-11-24T16:56:12.379+00:00&quot;,&quot;status&quot;:500}">* def pauta = ............................................................. passed
+<testsuite failures="0" name="src/main/java/pauta/pauta-creation.feature" skipped="0" tests="1" time="0.917542">
+  <testcase classname="src.main.java.pauta.pauta-creation" name="Test POST creat Pauta" time="0.917542">
+    <system-out>* def uuidRandom = ........................................................ passed
+* def numberRandom = ...................................................... passed
+* def pauta = ............................................................. passed
 Given url 'http://localhost:8080' ......................................... passed
 And path 'v1/pautas' ...................................................... passed
 And request pauta ......................................................... passed
 When method POST .......................................................... passed
-Then status 201 ........................................................... failed
-
-Stack Trace:
-com.intuit.karate.exception.KarateException: pauta-creation.feature:16 - status code was: 500, expected: 201, response time: 52, url: http://localhost:8080/v1/pautas, response: {"path":"/v1/pautas","error":"Internal Server Error","timestamp":"2021-11-24T16:56:12.379+00:00","status":500}&#13;
-	at ✽.Then status 201 (pauta-creation.feature:16)</failure>
+Then status 201 ........................................................... passed</system-out>
   </testcase>
 </testsuite>

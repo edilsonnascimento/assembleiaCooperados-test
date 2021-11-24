@@ -1,11 +1,21 @@
 Feature: Endpoint for Bucket creation
 
   Scenario: Test POST creat Pauta
+    * def uuidRandom =
+    """
+      function() { return java.util.UUID.randomUUID() + ''}
+    """
+
+    * def numberRandom =
+    """
+        function(max) { return Math.floor(Math.random() * max) }
+    """
+
     * def pauta =
           """
               {
-                "uuid": "1bf315dc-9f15-4da1-9ade-33388ac0b636",
-                "titulo": "titulo",
+                "uuid": '#(uuidRandom())',
+                "titulo": '#("Título - " + numberRandom(1000))',
                 "descricao": "descricao"
               }
           """
