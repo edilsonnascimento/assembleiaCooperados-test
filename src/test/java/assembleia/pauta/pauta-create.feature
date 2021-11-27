@@ -2,39 +2,49 @@ Feature: Endpoint for Bucket creation
 
   Background:
     * url 'http://localhost:8080/v1/pautas'
-    * def gererate = Java.type('assembleia.DataGenerator')
+    * def generate = Java.type('assembleia.DataGenerator')
 
-  Scenario: Create Bucket with valid
-
-    Given request
+  Scenario: Must create only one Bucket with same valid field
+      * def uuid = generate.uuid()
+      * def expetedLocation = 'v1/pautas/' + uuid
+      * def payload =
             """
-                {
-                  "uuid": '#(gererate.uuid())',
-                  "titulo": '#("Título - " + gererate.randomName())',
-                  "descricao": '#("Descrição - " + gererate.randomName())',
-                }
+                  {
+                    "uuid": '#(uuid)',
+                    "titulo": '#("Título - " + generate.randomName())',
+                    "descricao": '#("Descrição - " + generate.randomName())',
+                  }
             """
 
-    When method POST
-    Then status 201
+      Given request payload
+      When method POST
+      Then status 201
+      And match responseHeaders['Location'][0] == expetedLocation
 
-
-  Scenario Outline: Can't create Bucket with invalid
-
-    Given request
-            """
-                {
-                  "uuid": <uuid>,
-                  "titulo": <titulo>,
-                  "descricao": <descricao>
-                }
-            """
+    Given request payload
     When method POST
     Then status 400
-    Examples:
-      | uuid               | titulo                        | descricao
-      | #(gererate.uuid()) | #("Título - " + randomName()) | ''
-      | #(gererate.uuid()) | 'ABC'                         | #("Descricao - " + randomName())
-      | null               | #("Título - " + randomName()) | #("Descricao - " + randomName())
 
+  Scenario Outline: Can't create Bucket with invalid fields
+      Given request
+              """
+                  {
+                    "uuid": <uuid>,
+                    "titulo": <titulo>,
+                    "descricao": <descricao>
+                  }
+              """
+      When method POST
+      Then status 400
 
+      Examples:
+        | uuid               | titulo                                 | descricao                                 |
+        | #(generate.uuid()) | #("Título - " + generate.randomName()) | ''                                        |
+        | #(generate.uuid()) | #("Título - " + generate.randomName()) | null                                      |
+        | #(generate.uuid()) | 'ABC'                                  | #("Descricao - " + generate.randomName()) |
+        | #(generate.uuid()) | ''                                     | #("Descricao - " + generate.randomName()) |
+        | #(generate.uuid()) | null                                   | #("Descricao - " + generate.randomName()) |
+        | #(generate.uuid()) |                                        | #("Descricao - " + generate.randomName()) |
+        | null               | #("Título - " + generate.randomName()) | #("Descricao - " + generate.randomName()) |
+        | ''                 | #("Título - " + generate.randomName()) | #("Descricao - " + generate.randomName()) |
+        |                    | #("Título - " + generate.randomName()) | #("Descricao - " + generate.randomName()) |
