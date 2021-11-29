@@ -24,6 +24,7 @@ Feature: Endpoint for Bucket creation
     Given request payload
     When method POST
     Then status 400
+    And match response == 'Invalid duplicated data: uuid' ||  'Invalid duplicated data: titulo'
 
   Scenario Outline: Can't create Bucket with invalid fields
       Given request
