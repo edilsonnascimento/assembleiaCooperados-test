@@ -6,12 +6,13 @@ Feature: Endpoint for Bucket creation
 
   Scenario: Must create only one Bucket with same valid field
       * def uuid = generate.uuid()
+      * def titulo =  "Título - " + generate.randomName()
       * def expetedLocation = 'v1/pautas/' + uuid
       * def payload =
             """
                   {
                     "uuid": '#(uuid)',
-                    "titulo": '#("Título - " + generate.randomName())',
+                    "titulo": '#(titulo)',
                     "descricao": '#("Descrição - " + generate.randomName())',
                   }
             """
@@ -21,10 +22,11 @@ Feature: Endpoint for Bucket creation
       Then status 201
       And match responseHeaders['Location'][0] == expetedLocation
 
-    Given request payload
-    When method POST
-    Then status 400
-    And match response == 'Invalid duplicated data: uuid' ||  'Invalid duplicated data: titulo'
+      Given request payload
+      When method POST
+      Then status 400
+      And match response == { message: 'Invalid duplicated data', uuid: '#(uuid)', titulo: '#(titulo)' }
+
 
   Scenario Outline: Can't create Bucket with invalid fields
       Given request
